@@ -3,7 +3,7 @@ import StackNavigator from './StackNavigator';
 import SettingsScreen from '../screens/SettingsScreen';
 import { Image, TouchableOpacity, Text, View, useWindowDimensions } from 'react-native';
 import { styles } from '../theme/appTheme';
-import Tabs from './Tabs';
+import {Tabs} from './Tabs';
 
 const Drawer = createDrawerNavigator();
 
