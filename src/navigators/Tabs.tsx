@@ -5,6 +5,7 @@ import StackNavigator from './StackNavigator';
 import { colores } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import TopTapNavigator from './TopTapNavigation';
 
 
 
@@ -54,7 +55,7 @@ const TabsAndroid = () => {
         
     >
         <TabsAndroids.Screen name="Tab1Screen" options={{title:'Tab1'}} component={Tab1Screen} />
-        <TabsAndroids.Screen name="Tab2Screen" options={{title:'Tab2'}}  component={Tab2Screen} />
+        <TabsAndroids.Screen name="TopTapNavigator" options={{title:'Tab2'}}  component={TopTapNavigator} />
         <TabsAndroids.Screen name="StackNavigator" options={{title:'Tab3'}}  component={StackNavigator} />
       </TabsAndroids.Navigator>
     );
@@ -103,7 +104,7 @@ const TabsIOS = ()  => {
       {/* configuracion para cada opcion por separado */}
       {/* <Tab.Screen name="Tab1Screen" options={{title:'Tab1', tabBarIcon:()=><Text>T1</Text>}} component={Tab1Screen} /> */}
       <bottonTubIOS.Screen name="Tab1Screen" options={{title:'Tab1'}} component={Tab1Screen} />
-      <bottonTubIOS.Screen name="Tab2Screen" options={{title:'Tab2'}}  component={Tab2Screen} />
+      <bottonTubIOS.Screen name="TopTapNavigator" options={{title:'Tab2'}}  component={TopTapNavigator} />
       <bottonTubIOS.Screen name="StackNavigator" options={{title:'Tab3'}}  component={StackNavigator} />
     </bottonTubIOS.Navigator>
   );
