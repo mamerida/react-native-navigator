@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Tab1Screen from '../screens/Tab1Screen';
-import Tab2Screen from '../screens/Tab2Screen';
 import StackNavigator from './StackNavigator';
 import { colores } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import TopTapNavigator from './TopTapNavigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 
@@ -37,19 +37,17 @@ const TabsAndroid = () => {
                 let iconName : string = '';
                 switch(route.name){
                 case 'Tab1Screen':
-                    iconName = 'T1';
+                    iconName = 'airplane-outline';
                     break;
-                case 'Tab2Screen':
-                    iconName = 'T2';
+                case 'TopTapNavigator':
+                    iconName = 'american-football-outline';
                     break;
                 case 'StackNavigator':
-                    iconName = 'ST';
+                    iconName = 'american-football-outline';
                     break;
                 }
                 return(
-                <Text style={{color }}>
-                {iconName}
-                </Text>
+                  <Icon name={iconName} size={20} color={color} />
                 )}
         })}
         
@@ -92,9 +90,7 @@ const TabsIOS = ()  => {
               break;
           }
           return(
-          <Text style={{color }}>
-            {iconName}
-          </Text>
+            <Icon name="airplane-outline" size={30} color={color} />
           )}
         })}
         sceneContainerStyle={{
