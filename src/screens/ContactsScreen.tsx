@@ -5,16 +5,18 @@ import { AuthContext } from '../context/AuthContext'
 
 const ContactsScreen = () => {
 
-  const {singIn} = useContext(AuthContext)
+  const {singIn ,authState} = useContext(AuthContext)
 
 
   return (
     <View style={styles.marginGlobal}>
       <Text style={styles.title}>ContactsScreen</Text>
-      <Button
-        title='Sing In'
-        onPress={singIn}
-      />
+      {!authState.isLoggendIn && 
+          <Button
+            title='Sing In'
+            onPress={singIn}
+          />
+      }
     </View>
   )
 }

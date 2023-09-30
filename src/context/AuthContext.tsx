@@ -23,7 +23,8 @@ export const AuthInitialState: AuthState = {
 export interface AuthContextProps{
     authState: AuthState,
     singIn: () => void,
-
+    logout: () => void,
+    changeIcon: (icon: string) => void
 }
 
 // Crear el contexto 
@@ -41,6 +42,12 @@ export const AuthProvider = ({children} :any) =>{
         dispatch({type: 'sing-in'})
     }
 
+    const changeIcon = (icon: string) =>{
+        dispatch({type: 'changeIcon', payload: icon})
+    }
+
+    const logout = () => dispatch({type:'logout'})
+
     return(
         //envuelvo los elementos hijos que van a ser proveeidos por mi contexto
         <AuthContext.Provider
@@ -48,7 +55,9 @@ export const AuthProvider = ({children} :any) =>{
             // que tenga los tipos del AuthContextProps
             value={{
                 authState,
-                singIn
+                singIn,
+                changeIcon,
+                logout
             }}
         >
             {children}
